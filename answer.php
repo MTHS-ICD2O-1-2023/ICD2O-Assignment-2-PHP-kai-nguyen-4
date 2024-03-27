@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="description" content="Cube form with PHP" />
+  <meta name="description" content="Form with php" />
   <meta name="author" content="Kai Nguyen" />
   <meta name="keywords" content="mths, ics2o" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,7 +24,7 @@
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
         <!-- Title -->
-        <span class="mdl-layout-title">Cube Volume Form</span>
+        <span class="mdl-layout-title">PHP Form</span>
         <!-- Add spacer, to align navigation to the right -->
         <div class="mdl-layout-spacer"></div>
       </div>
@@ -33,21 +33,11 @@
       <div class="right-image">
         <img src="https://curvebreakerstestprep.com/wp-content/uploads/2021/04/Volume-of-a-Cube.png" alt="cube image" />
       </div>
-      <div class="page-content">Enter the side length of your cube</div>
-      <form action="answer.php" method="POST">
-        <p>Length (cm)</p>
-        <div class="mdl-textfield mdl-js-textfield">
-          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="length-entered" />
-          <label class="mdl-textfield__label" for="length-entered">Length (cm) ...</label>
-          <span class="mdl-textfield__error">Input is not a number!</span>
-        </div>
-        <br />
-        <input class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit"></input>
-      </form>
-      <br />
-      <br />
-      <div class="page-content-answer">
-        <div id="answer"></div>
+      <div class="page-content">
+        <?php
+        $length = $_POST["length-entered"];
+        echo "The volume is: " . $length ** 3 . " cm<sup>3"
+        ?>
       </div>
     </main>
   </div>
